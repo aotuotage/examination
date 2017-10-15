@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>前端随机考试</title>
+	<style>
+       body{
+       	 text-align: center;
+       }
+       .title h2{
+       	  color:#999;
+       }
+       .start{
+       	 margin-bottom:20px;
+       }
+	</style>
+</head>
+<body>
+  <div class="title">
+	  <h2>前端随机面试题</h2>
+	  <h3 id="examination">题目显示区域</h3>
+  </div>
+  <div class="start">
+	  <span>随机题目:</span>
+	  <button id="start">开始</button>
+  </div>
+  <div class="repond">
+	  <span>答:</span><br><br>
+	  <textarea name="" id="" cols="50" rows="8"></textarea><br><br>
+	  <button id="submit">提交</button>
+  </div>
+
+   <script>
+      var examination = document.getElementById("examination");
+      var start = document.getElementById("start");
+      start.addEventListener('click' , function(){
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("GET","http://127.0.0.1:8081/process_get",true);
+        xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("examination").innerHTML=xmlhttp.responseText;
+			}
+		}
+		xmlhttp.send();
+      });
+
+      var submit = document.getElementById("submit");
+      submit.addEventListener('click' , function(){
+      	
+      })
+   </script>
+</body>
+</html>
