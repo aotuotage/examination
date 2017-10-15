@@ -8,4 +8,4 @@ npm install -g nodemailer
 npm install -g node-schedule
 
 txt题库录入标准
-题目(不换行)：^(--- [1-9]).+\* 
+题目(不换行)：^(--- [1-9])开头，中间任何字符，以*结尾
